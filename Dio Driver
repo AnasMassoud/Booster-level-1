@@ -1,0 +1,21 @@
+#include "C:/Users/Anas Ayman/Desktop/task 6/my_project/my_project/MCAL/includes/Registers.h"
+#include "C:/Users/Anas Ayman/Desktop/task 6/my_project/my_project/ECUAL/Button_Driver/Button.h"
+#include "C:/Users/Anas Ayman/Desktop/task 6/my_project/my_project/ECUAL/LED_Driver/LED.h"
+#include "util/delay.h"
+
+int main(void)
+{
+    Button_init();
+	Led_init();
+   
+    while (1) 
+    {
+		 uint8_t CurrentSwitchStatus = Button_get_status();
+		 _delay_ms(200); 
+		 if(CurrentSwitchStatus == closed)
+		 {
+			 Led_toggle();
+		 }
+		 
+	}
+}
